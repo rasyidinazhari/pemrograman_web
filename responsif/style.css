@@ -1,0 +1,101 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Layout umum */
+  body {
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    width: 220px;
+    transition: transform 0.3s ease;
+  }
+  .sidebar.hidden {
+    transform: translateX(-100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+  }
+  .sidebar ul {
+    list-style: none;
+    margin-top: 20px;
+  }
+  .sidebar ul li {
+    margin: 10px 0;
+  }
+  .sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Main content */
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header toggle button */
+  .toggle-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 1rem;
+  }
+  
+  /* Content */
+  .content {
+    flex: 1;
+    padding: 1rem;
+  }
+  
+  /* Bottom navigation */
+  .bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #eee;
+    padding: 0.5rem 0;
+    position: sticky;
+    bottom: 0;
+  }
+  .bottom-nav a {
+    text-align: center;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .bottom-nav .icon {
+    display: block;
+    font-size: 20px;
+  }
+  
+  /* Media Queries: Responsif untuk Mobile */
+  @media (max-width: 768px) {
+    /* Sidebar tetap absolute untuk toggle */
+    .sidebar {
+      width: 220px;
+    }
+  
+    /* Body tetap flex-row, tidak perlu column */
+    /* main-content otomatis mengisi */
+  }
+  .sidebar.hidden {
+    transform: translateX(-100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
